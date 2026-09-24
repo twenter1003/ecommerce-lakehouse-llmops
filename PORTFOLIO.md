@@ -70,7 +70,7 @@ flowchart TB
         AF -->|1. Healthcheck| RP
         AF -->|2. Maintenance| COMP
         AF -->|3. Run Models| DBT
-        AF -->|4. SLA Tests (12/12 PASS)| DBT
+        AF -->|"4. SLA Tests 12/12 PASS"| DBT
         AF -->|5. Vector Sync| EMB
         AF -->|6. Healthcheck| API
     end
