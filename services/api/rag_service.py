@@ -4,7 +4,8 @@ import logging
 from typing import List, Tuple
 from dotenv import load_dotenv
 
-load_dotenv()
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
 from services.api.schemas import ProductResult

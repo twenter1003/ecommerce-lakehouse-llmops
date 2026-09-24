@@ -3,7 +3,8 @@ import logging
 from typing import List
 from dotenv import load_dotenv
 
-load_dotenv()
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
+load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
 
 logger = logging.getLogger("EmbeddingProvider")
 
@@ -54,6 +55,8 @@ class EmbeddingProvider:
                 return [emb.values for emb in response.embeddings]
             except Exception as e:
                 logger.error(f"Gemini Embeddings call failed: {e}. Falling back to FastEmbed for this batch.")
+                if not hasattr(self, "model"):
+                    self._init_fastembed()
                 return [v.tolist() for v in self.model.embed(texts)]
         else:
             return [v.tolist() for v in self.model.embed(texts)]

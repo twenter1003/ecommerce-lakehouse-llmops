@@ -24,7 +24,7 @@ class TestMilestone5LLMOps(unittest.TestCase):
             data = response.json()
             self.assertEqual(data["status"], "healthy")
             self.assertGreaterEqual(data["vector_db_points"], 8)
-            self.assertIn("fastembed", data["embedding_provider"].lower())
+            self.assertIn(data["embedding_provider"].lower(), ["fastembed", "gemini"])
 
     def test_02_semantic_search_with_filter(self):
         """시맨틱 검색 및 카테고리/가격 페이로드 필터링 검증"""
