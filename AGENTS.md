@@ -58,5 +58,5 @@ Claude Code 및 Antigravity 에이전트는 사용자와 협업할 때 다음 �
 - [x] **Milestone 2**: Docker 기반 Kafka(Redpanda) 인프라 구축 & 실시간 Producer 연동 (토론 기반 재설계 및 검증 완료)
 - [x] **Milestone 4**: Apache Iceberg 레이크하우스 적재 & dbt 골드 마트 모델링 (토론 기반 재설계, 스몰 파일 방어, dbt 테스트 검증 완료)
 - [x] **Milestone 5 (LLMOps)**: 상품 임베딩 파이프라인 & Vector DB 적재 + LLM 서빙 API(FastAPI) (증분 임베딩 캐시, Iceberg 연동 실시간 개인화 추천 완료)
-- [ ] **Milestone 6**: Airflow 오케스트레이션 & 모니터링 & 최종 정리
+- [x] **Milestone 6**: Airflow 오케스트레이션 & 모니터링 & 최종 정리 (DAG 무결성 검증, Iceberg 컴팩션, dbt SLA 테스트, E2E 파이프라인 러너 완료)
 

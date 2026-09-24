@@ -13,4 +13,5 @@
 | **Milestone 3** | [Milestone 3: Spark Structured Streaming](milestone_3.md) | PySpark, Watermarking, StateStore Deduplication, Checkpointing | ✅ 완료 |
 | **Milestone 4** | [Milestone 4: Apache Iceberg & dbt 골드 마트](milestone_4.md) | Apache Iceberg, Hidden Partitioning, dbt-duckdb, Compaction | ✅ 완료 |
 | **Milestone 5** | [Milestone 5: LLMOps 상품 임베딩 & 서빙 API](milestone_5.md) | Gemini Embeddings, Qdrant, FastAPI, Semantic Search & RAG | ✅ 완료 |
-| **Milestone 6** | Milestone 6: Airflow 오케스트레이션 & 모니터링 | Apache Airflow, DAG Authoring, End-to-End Test | ⏳ 대기 |
+| **Milestone 6** | [Milestone 6: Airflow 오케스트레이션 & 모니터링](milestone_6.md) | Apache Airflow, DAG Authoring, End-to-End Pipeline Runner | ✅ 완료 |
+
