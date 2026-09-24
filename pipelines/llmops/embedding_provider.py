@@ -1,6 +1,9 @@
 import os
 import logging
 from typing import List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 logger = logging.getLogger("EmbeddingProvider")
 

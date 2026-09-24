@@ -49,5 +49,10 @@ profiles.yml
 # Local logs & data
 *.log
 docker/data/
+# Environment & Secrets
+.env
+.env.*
+*.env
 
 .user.yml
+
