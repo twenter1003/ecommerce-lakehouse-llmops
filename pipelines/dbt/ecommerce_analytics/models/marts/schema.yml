@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mart_daily_funnel
+    description: "일자별 이커머스 사용자 전환 퍼널(조회 -> 장바구니 -> 주문 -> 결제) 및 단계별 전환율 마트"
+    columns:
+      - name: event_date
+        description: "이벤트 발생 일자"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_cart_abandonment
+    description: "세션별 장바구니 담기 후 결제 미완료(이탈) 세션 분석 마트"
+    columns:
+      - name: session_id
+        description: "세션 고유 식별자"
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_hourly_revenue
+    description: "시간대별 결제 승인 매출액(GMV), 객단가(AOV) 및 주문 취소율 모니터링 마트"
+    columns:
+      - name: event_hour
+        description: "시간대 (Hourly)"
+        tests:
+          - unique
+          - not_null

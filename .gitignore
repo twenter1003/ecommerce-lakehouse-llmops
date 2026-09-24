@@ -33,13 +33,21 @@ env/
 .idea/
 .vscode/
 
-# Spark & Streaming Checkpoints
+# Spark & Streaming Checkpoints & Iceberg Warehouse
 checkpoints/
 .checkpoint/
 spark-warehouse/
+warehouse/
 metastore_db/
 derby.log
+
+# dbt
+target/
+dbt_packages/
+profiles.yml
 
 # Local logs & data
 *.log
 docker/data/
+
+.user.yml

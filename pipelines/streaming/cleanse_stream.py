@@ -22,8 +22,8 @@ def create_spark_session() -> SparkSession:
         SparkSession.builder
         .appName("EcommerceCleanseStream")
         .master("local[*]")
-        # Spark 4.2.0 + Scala 2.13용 공식 Kafka 커넥터 패키지 지정
-        .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.13:4.2.0")
+        # Spark 4.0.0 + Scala 2.13용 공식 Kafka 커넥터 패키지 지정
+        .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.13:4.0.0")
         # 💡 [성능 최적화] 로컬 환경에서 불필요한 200개 셔플 파티션 방지 (카프카 파티션 수인 3으로 제한)
         .config("spark.sql.shuffle.partitions", "3")
         .getOrCreate()

@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_ecommerce_events
+    description: "Apache Iceberg Silver 레이어에서 직접 읽어온 정제된 이커머스 스트리밍 이벤트 뷰"
+    columns:
+      - name: event_id
+        description: "고유 이벤트 UUID (중복 제거 검증 대상)"
+        tests:
+          - unique
+          - not_null
+
+      - name: event_type
+        description: "이벤트 타입 (퍼널 단계)"
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - 'item_view'
+                - 'add_to_cart'
+                - 'order_created'
+                - 'payment_completed'
+                - 'order_cancelled'
+
+      - name: user_id
+        description: "사용자 ID"
+        tests:
+          - not_null
+
+      - name: session_id
+        description: "세션 ID"
+        tests:
+          - not_null
