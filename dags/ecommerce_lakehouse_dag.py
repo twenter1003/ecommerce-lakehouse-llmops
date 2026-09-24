@@ -3,8 +3,12 @@ import sys
 from datetime import datetime, timedelta
 
 from airflow import DAG
-from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
+try:
+    from airflow.providers.standard.operators.python import PythonOperator
+    from airflow.providers.standard.operators.bash import BashOperator
+except ImportError:
+    from airflow.operators.python import PythonOperator  # type: ignore
+    from airflow.operators.bash import BashOperator  # type: ignore
 
 # 프로젝트 루트 경로
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
