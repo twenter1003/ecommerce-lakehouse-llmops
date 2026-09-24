@@ -12,5 +12,5 @@
 | **Milestone 2** | [Milestone 2: Redpanda & 실시간 Producer](milestone_2.md) | Redpanda, Kafka Headers, W3C Trace Context, de-debate | ✅ 완료 |
 | **Milestone 3** | [Milestone 3: Spark Structured Streaming](milestone_3.md) | PySpark, Watermarking, StateStore Deduplication, Checkpointing | ✅ 완료 |
 | **Milestone 4** | [Milestone 4: Apache Iceberg & dbt 골드 마트](milestone_4.md) | Apache Iceberg, Hidden Partitioning, dbt-duckdb, Compaction | ✅ 완료 |
-| **Milestone 5** | Milestone 5: LLMOps 상품 임베딩 & 서빙 API | Gemini Embeddings, Vector DB, FastAPI, Semantic Search | ⏳ 대기 |
+| **Milestone 5** | [Milestone 5: LLMOps 상품 임베딩 & 서빙 API](milestone_5.md) | Gemini Embeddings, Qdrant, FastAPI, Semantic Search & RAG | ✅ 완료 |
 | **Milestone 6** | Milestone 6: Airflow 오케스트레이션 & 모니터링 | Apache Airflow, DAG Authoring, End-to-End Test | ⏳ 대기 |
