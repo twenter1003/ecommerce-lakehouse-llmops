@@ -56,7 +56,7 @@ Claude Code 및 Antigravity 에이전트는 사용자와 협업할 때 다음 �
 ## 4. 진행 현황 (Roadmap)
 - [x] **Milestone 1**: 가상환경 셋업, 이커머스 스키마 정의 및 이벤트 생성기(Funnel, 중복/지연 주입) 작성 완료
 - [x] **Milestone 2**: Docker 기반 Kafka(Redpanda) 인프라 구축 & 실시간 Producer 연동 (토론 기반 재설계 및 검증 완료)
-- [ ] **Milestone 3**: Spark Structured Streaming 기반 데이터 정제 및 중복 제거
+- [x] **Milestone 3**: Spark Structured Streaming 기반 데이터 정제 및 중복 제거
 - [ ] **Milestone 4**: Apache Iceberg 레이크하우스 적재 & dbt 골드 마트 모델링
 - [ ] **Milestone 5 (LLMOps)**: 상품 임베딩 파이프라인 & Vector DB 적재 + LLM 서빙 API(FastAPI)
 - [ ] **Milestone 6**: Airflow 오케스트레이션 & 모니터링 & 최종 정리

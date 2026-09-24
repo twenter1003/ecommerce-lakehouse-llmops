@@ -10,7 +10,7 @@
 | :--- | :--- | :--- | :--- |
 | **Milestone 1** | [Milestone 1: 스키마 & 트래픽 생성기](milestone_1.md) | Pydantic v2, Funnel Simulation, Chaos Injection (Dups/Late) | ✅ 완료 |
 | **Milestone 2** | [Milestone 2: Redpanda & 실시간 Producer](milestone_2.md) | Redpanda, Kafka Headers, W3C Trace Context, de-debate | ✅ 완료 |
-| **Milestone 3** | [Milestone 3: Spark Structured Streaming](milestone_3.md) *(작성 예정)* | PySpark, Watermarking, StateStore Deduplication, Checkpoint | 🔄 진행 예정 |
+| **Milestone 3** | [Milestone 3: Spark Structured Streaming](milestone_3.md) | PySpark 4.2.0, Watermarking, StateStore Deduplication, Checkpointing | ✅ 완료 |
 | **Milestone 4** | Milestone 4: Apache Iceberg & dbt 골드 마트 | Apache Iceberg, REST Catalog, dbt Core, Data Quality Audit | ⏳ 대기 |
 | **Milestone 5** | Milestone 5: LLMOps 상품 임베딩 & 서빙 API | Gemini Embeddings, Vector DB, FastAPI, Semantic Search | ⏳ 대기 |
 | **Milestone 6** | Milestone 6: Airflow 오케스트레이션 & 모니터링 | Apache Airflow, DAG Authoring, End-to-End Test | ⏳ 대기 |
