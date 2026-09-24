@@ -38,6 +38,14 @@ def init_qdrant_collection(client: QdrantClient, dimension: int):
     Qdrant 컬렉션 및 HNSW / Payload 색인 초기화
     """
     collections = [c.name for c in client.get_collections().collections]
+    if COLLECTION_NAME in collections:
+        col_info = client.get_collection(COLLECTION_NAME)
+        current_dim = col_info.config.params.vectors.size
+        if current_dim != dimension:
+            logger.warning(f"Collection dimension mismatch ({current_dim} != {dimension}). Recreating collection...")
+            client.delete_collection(COLLECTION_NAME)
+            collections.remove(COLLECTION_NAME)
+
     if COLLECTION_NAME not in collections:
         logger.info(f"Creating Qdrant collection '{COLLECTION_NAME}' (dim={dimension}, Cosine)...")
         client.create_collection(
@@ -57,7 +65,7 @@ def init_qdrant_collection(client: QdrantClient, dimension: int):
         )
         logger.info(f"Collection '{COLLECTION_NAME}' created with category/price payload indexes.")
     else:
-        logger.info(f"Collection '{COLLECTION_NAME}' already exists.")
+        logger.info(f"Collection '{COLLECTION_NAME}' already exists (dim={dimension}).")
 
 
 def build_search_text(p: Dict[str, Any]) -> str:

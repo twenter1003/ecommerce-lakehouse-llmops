@@ -20,9 +20,10 @@ class EmbeddingProvider:
         if self.api_key:
             try:
                 from google import genai
+                from google.genai import types
                 self.client = genai.Client(api_key=self.api_key)
                 self.provider_type = "gemini"
-                self.model_name = "text-embedding-004"
+                self.model_name = "gemini-embedding-001"
                 self.dimension = 768
                 logger.info(f"Using Google Gemini Embedding API ({self.model_name}, dim={self.dimension})")
             except Exception as e:
@@ -48,9 +49,11 @@ class EmbeddingProvider:
 
         if self.provider_type == "gemini":
             try:
+                from google.genai import types
                 response = self.client.models.embed_content(
                     model=self.model_name,
-                    contents=texts
+                    contents=texts,
+                    config=types.EmbedContentConfig(output_dimensionality=self.dimension)
                 )
                 return [emb.values for emb in response.embeddings]
             except Exception as e:

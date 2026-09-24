@@ -23,7 +23,8 @@ class RAGService:
                 from google import genai
                 self.client = genai.Client(api_key=self.api_key)
                 self.has_llm = True
-                self.model_name = "gemini-2.5-flash"
+                self.model_name = "gemini-3.5-flash-lite"
+                self.fallback_model = "gemini-3.6-flash"
                 logger.info(f"Initialized Gemini LLM RAG client ({self.model_name})")
             except Exception as e:
                 logger.warning(f"Failed to init Gemini client: {e}. Using deterministic RAG formatter.")
@@ -63,10 +64,17 @@ class RAGService:
 
 고객이 만족할 수 있도록 상품의 특성과 가격대를 짚어주며 추천해주세요.
 """
-                response = self.client.models.generate_content(
-                    model=self.model_name,
-                    contents=prompt
-                )
+                try:
+                    response = self.client.models.generate_content(
+                        model=self.model_name,
+                        contents=prompt
+                    )
+                except Exception as e1:
+                    logger.warning(f"Primary model {self.model_name} failed: {e1}. Retrying with {self.fallback_model}...")
+                    response = self.client.models.generate_content(
+                        model=self.fallback_model,
+                        contents=prompt
+                    )
                 answer_text = response.text
                 return answer_text, products
             except Exception as e:
